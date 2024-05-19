@@ -1,9 +1,4 @@
 
-
-
- 
- 
-
 function processArray(arr) {
     return arr.map(num => {
         if (num % 2 === 0) {
@@ -15,6 +10,30 @@ function processArray(arr) {
 }
 
 
+function formatArrayStrings(stringArray, numberArray) {
+    if (stringArray.length !== numberArray.length) {
+        throw new Error('The two arrays must have the same length');
+    }
+
+    return stringArray.map((str, index) => {
+        if (numberArray[index] % 2 === 0) {
+            return str.toUpperCase(); 
+        } else {
+            return str.toLowerCase(); 
+        }
+    });
+}
+
+
 const inputArray = [1, 2, 3, 4, 5];
-const resultArray = processArray(inputArray);
-console.log(resultArray); 
+const processedNumbers = processArray(inputArray);
+console.log(processedNumbers); 
+
+const stringArray = ["Hello", "World", "JavaScript", "is", "awesome"];
+const formattedStrings = formatArrayStrings(stringArray, processedNumbers);
+console.log(formattedStrings); 
+
+
+
+ 
+ 
